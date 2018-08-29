@@ -1,0 +1,28 @@
+body {
+    background-color: #7986cb !important;
+}
+
+.container {
+    padding-top: 200px;
+}
+
+.content {
+    display: inline;
+}
+
+.content h3{
+    color: #ffffff;
+}
+
+.content h4 {
+    color: #ffffff;
+}
+
+.content h5 {
+    color: #ffffff;
+}
+
+.content img {
+    width: 300px;
+    height: 300px;
+}

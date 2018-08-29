@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Goo-League - {{ summoner_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/summoner.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <h3 class="col-sm">{{ summoner_name }}</h3>
+                <h5 class="col-sm">{{ region }}</h5>
+                <h5 class="col-sm">{{ level }}</h5>
+                <h4 class="col-sm">{{ tier }}</h4>
+                {% if tier == 'BRONZE' %}
+                    <img class="col-sm" src="{{ url_for('static', filename='../static/images/divisions/BRONZE.png') }}">
+                {% elif tier == 'SILVER' %}
+                    <img class="col-sm" src="{{ url_for('static', filename='../static/images/divisions/Silver.png') }}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
