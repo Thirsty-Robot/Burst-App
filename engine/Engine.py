@@ -10,13 +10,13 @@ from requests import HTTPError
 import os
 
 # Api enviroment variable
-api_key = 'RGAPI-b7414bc9-61e5-4500-b9c6-11dcb6f761bf'
+api_key = 'RGAPI-13177b80-1a78-49a2-b5ed-89e1ca038e82'
 
 # RiotWatcher constructor
 watcher = RiotWatcher(api_key)
 
 # Search summoner class
-class Engine(object):
+class Engine():
     # Class constructor
     def __init__(self):
         self.free_champ_dict = []
@@ -33,6 +33,7 @@ class Engine(object):
 
             # Parsed information in dictionary
             user_response = {
+                'Icon'  : summoner['profileIconId'],
                 'Name'  : summoner['name'],
                 'Level' : summoner['summonerLevel'],
                 'Tier'  : ranked_stats[0]['tier'],
@@ -74,8 +75,26 @@ class Engine(object):
 
         return champions
 
-    def search_champ(self, region, name):
+    """
+    def search_champ(self, region):
+        # Riot API request
         champions = watcher.champion.all(region)
 
-        for name in champions:
-            champion = watcher.static_data.champion(region, name)
+        # Itinerators and variables
+        i = 0
+        n = 0
+        champ_id_array = []
+
+        # Cycle trough array, and store all content
+        # in champs variable
+        for i in range(0, 141):
+            champs = champions['champions'][i]
+            for k, v in champs.items():
+                if (k == 'id'):
+                    champ_id_array.append(v)
+                i+=1
+
+        for x in champ_id_array:
+            champs_by_id = watcher.champion.by_id(region, x)
+            print (champs_by_id)
+    """

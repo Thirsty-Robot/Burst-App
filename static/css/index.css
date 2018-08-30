@@ -17,3 +17,8 @@ body {
 .summoner-name {
     width: 300px !important;
 }
+
+.flashes {
+    z-index: 1;
+    padding-top: 10px !important;
+}

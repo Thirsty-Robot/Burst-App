@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="content-1">
         <center>
             <form method="POST" action="/summoner" class="form-inline justify-content-md-center">
@@ -29,6 +28,12 @@
                 </div>
 
                 <button class="btn btn-primary btn-large" type="submit">Search</button>
+
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger flashes" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
             </form>
         </center>
     </div>
