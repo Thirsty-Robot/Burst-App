@@ -6,14 +6,23 @@ from flask import flash
 from flask import Markup
 from flask import url_for
 from flask import redirect
+from flask_wtf.csrf import CSRFProtect
 
 # Request modules
-from engine.Engine import Engine
+from engine.RiotEngine import Engine
+from engine.auth import Auth
 
-# Declares flask app constructor
+# Create app
 app = Flask(__name__)
-app.secret_key = 'TEST_KEY'
+
+# App configurations
+app.secret_key = '$2y$16$nTty7HIXs24iphrgBSZ1CODdtU7PcpdZKj/rjCjqVlNHuY09bDihu'
+csrf = CSRFProtect(app)
+csrf.init_app(app)
+
+# Database and other constructors
 engine = Engine()
+auth = Auth(app)
 
 # Index route
 @app.route('/')
@@ -41,27 +50,39 @@ def summoner():
             return render_template('summoner.html', icon=user_query['Icon'], summoner_name=user_query['Name'], level=user_query['Level'], 
                             tier=user_query['Tier'])
         
-        # If error is set equal to true
+        # If error is a 404
         elif (user_query['Error'] == 1):
             flash('Ups, summoner not found not found')
             return redirect(url_for('index'))
 
-# Champions route
-@app.route('/champion', methods = ['GET', 'POST'])
-@app.route('/champion/<name>')
-def champions():
-    region = 'na1'
+        # If error is of type 2 (403, 402, 401)
+        elif (user_query['Error'] == 2):
+            flash('Ups, something went wrong, please try again later')
+            return redirect(url_for('index'))
 
-    # Get method
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
     if request.method == 'GET':
-        free_champs = engine.free_champs(region)
-        winrate = engine.winrate_champs(region)
+        return render_template('signup.html')
 
-        return render_template('champions.html', free_champs = free_champs, winrate_champs = winrate)
+    if request.method == 'POST':
+        user = request.form
+        name = user['name']
+        username_league = user['league-user']
+        region = user['region']
+        email = user['email']
+        username = user['username']
+        password = user['password']
+        password_check = user['password_confirm']
 
-    ## TODO: FINISH POST METHOD
-    elif request.method == 'POST':
-        champion_search = engine.free_champs(region)
+        reg_user = auth.signup(name, username_league, region, username, email, password, password_check)
+
+        if (reg_user == True):
+            pass
+
+        else:
+            flash('Are you sure you know how to type your password? Please try again')
+            return redirect(url_for('signup'))
 
 # Main loop
 if (__name__ == '__main__'):

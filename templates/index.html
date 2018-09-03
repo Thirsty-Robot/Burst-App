@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block title %}
-    <title>Welcome to Goo-league!!</title>
+    <title>Goo-league</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/index.css') }}">
 {% endblock %}
 
@@ -8,11 +8,11 @@
     <div class="content-1">
         <center>
             <form method="POST" action="/summoner" class="form-inline justify-content-md-center">
-                <div class="form-group mb-12">
+                <div class="form-group mb-12 forms">
                     <input class="form-control summoner-name" type="text" placeholder="Search summoner" id="summoner_name" name="Summoner-name">
                 </div>
 
-                <div class="form-group mb-12">
+                <div class="form-group mb-12 forms">
                     <select name="Region" class="form-control">
                         <option value="" selected>Choose region</option>
                         <option value="na1">NA</option>

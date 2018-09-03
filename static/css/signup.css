@@ -1,0 +1,27 @@
+body {
+    background-image: url('http://www.lol-wallpapers.com/wp-content/uploads/2018/08/Nunu-Lore-Willump-Rework-3-HD-4k-Wallpaper-Background-Official-Art-Artwork-League-of-Legends-lol-1024x492.jpg');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    padding-top: 115px;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 50px;
+}
+
+.back-form {
+    background-color:#455a64;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+label {
+    color: #fff;
+}

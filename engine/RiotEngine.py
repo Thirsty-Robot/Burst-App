@@ -10,7 +10,7 @@ from requests import HTTPError
 import os
 
 # Api enviroment variable
-api_key = 'RGAPI-13177b80-1a78-49a2-b5ed-89e1ca038e82'
+api_key = ' RGAPI-e42b0ebf-fa4a-466d-8b9d-ed62fa7084fc'
 
 # RiotWatcher constructor
 watcher = RiotWatcher(api_key)
@@ -47,33 +47,24 @@ class Engine():
         # Get error as err
         except HTTPError as err:
             # Error message is 404
-            if err.response.status_code == 404:
-                
+            if err.response.status_code == 404:                
                 # Parsed dictionary with error boolean set to 1
                 user_response = {
-                    'Error': 1
+                    'Error' : 1
                 }
 
                 # Return dictionary
                 return user_response
-        
-    # Free champs method
-    # Returns all free champions for the week
-    def free_champs(self, region: str):
-        champions = watcher.champion.all(region, free_to_play=True)
-        champs    = champions['champions']
 
-        for champ in champs:
-            self.free_champ_dict.append(champ)
-        
-        return self.free_champ_dict
+            # If there is any other type of error
+            else:
+                # Parsed dictionary with type 2 error
+                user_respose = {
+                    'Error' : 2
+                }
 
-    # Winrate champs method
-    # Champions with the most winrate in a certain region
-    def winrate_champs(self, region):
-        champions = watcher.static_data.champions(region)
-
-        return champions
+                # Return dictionary
+                return user_respose
 
     """
     def search_champ(self, region):

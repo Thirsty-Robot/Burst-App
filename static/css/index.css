@@ -14,6 +14,10 @@ body {
     padding-right: 300px;
 }
 
+.forms {
+    padding-right: 5px !important;
+}
+
 .summoner-name {
     width: 300px !important;
 }
