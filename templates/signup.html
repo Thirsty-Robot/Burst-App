@@ -9,6 +9,13 @@
     <div class="content">
         <div class="back-form">
             <form class="form" action="/signup" method="POST">
+
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger flashes" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
@@ -19,9 +26,24 @@
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-12">
                     <label for="summoner">Summoner name</label>
                     <input type="text" class="form-control" id="summoner" placeholder="Enter summoner name" name="summoner">
+                </div>
+
+                <div class="form-group mb-12">
+                    <select name="region" class="form-control">
+                        <option value="" selected>Choose region</option>
+                        <option value="na1">NA</option>
+                        <option value="la1">LAN</option>
+                        <option value="la2">LAS</option>
+                        <option value="br1">BR</option>
+                        <option value="eun1">EUNE</option>
+                        <option value="euw1">EUW</option>
+                        <option value="oc1">OCE</option>
+                        <option value="ru">RU</option>
+                        <option value="jp1">JP</option>
+                    </select>
                 </div>
 
                 <div class="form-group">

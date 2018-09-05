@@ -10,7 +10,7 @@ from requests import HTTPError
 import os
 
 # Api enviroment variable
-api_key = ' RGAPI-e42b0ebf-fa4a-466d-8b9d-ed62fa7084fc'
+api_key = 'RGAPI-e42b0ebf-fa4a-466d-8b9d-ed62fa7084fc'
 
 # RiotWatcher constructor
 watcher = RiotWatcher(api_key)
@@ -66,26 +66,12 @@ class Engine():
                 # Return dictionary
                 return user_respose
 
-    """
-    def search_champ(self, region):
-        # Riot API request
-        champions = watcher.champion.all(region)
+    def confirm_summoner(self, name, region):
+        try:
+            summoner = watcher.summoner.by_name(region, name)
 
-        # Itinerators and variables
-        i = 0
-        n = 0
-        champ_id_array = []
+            return True
 
-        # Cycle trough array, and store all content
-        # in champs variable
-        for i in range(0, 141):
-            champs = champions['champions'][i]
-            for k, v in champs.items():
-                if (k == 'id'):
-                    champ_id_array.append(v)
-                i+=1
-
-        for x in champ_id_array:
-            champs_by_id = watcher.champion.by_id(region, x)
-            print (champs_by_id)
-    """
+        except HTTPError as err:
+            if err.response.status_code == 404:
+                return False
