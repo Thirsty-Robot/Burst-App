@@ -84,9 +84,11 @@ class Auth():
             hashed_pass = account['password']
 
             if (bcrypt.checkpw(formated_password, hashed_pass)):
-                err_login['user_id'] = str(account['id']),
-                err_login['error'] = 'none'
-                return err_login
+                err_login_resp = {'user_id': str(account['id']), 
+                                'err': 'none'
+                                }
+
+                return err_login_resp
             else:
                 err_login['err'] = 'password'
                 return err_login
