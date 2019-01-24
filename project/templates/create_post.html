@@ -1,0 +1,30 @@
+{% extends 'layout-user.html' %}
+{% block title %}
+    <title>Create Post | Burst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/create_post.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <h2 class="header">Create a blog post</h2>
+
+        <form class="blog-content" name="blog-content" action="/create_post" method="POST">
+            <div class="form-group">
+                <input class="form-control form-pad" name="title" placeholder="Enter post title" required>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control form-pad" name="tags" placeholder="Enter some tags" required>
+            </div>
+
+            <div class="form-group">
+                <textarea class="form-control form-pad" rows="15" name="content" placeholder="Enter post content" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+
+            <button class="btn btn-primary btn-large animated fadeInLeft" type="submit">Ready to launch</button>
+        </form>
+    </div>
+{% endblock %}

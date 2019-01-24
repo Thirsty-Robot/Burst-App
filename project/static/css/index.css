@@ -1,0 +1,101 @@
+.logo {
+    padding-bottom: 5px;
+}
+
+.content-1 {
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    padding-top: 180px;
+}
+
+.forms {
+    padding-right: 5px !important;
+}
+
+.summoner-name {
+    width: 300px !important;
+}
+
+.flashes {
+    z-index: 1;
+    padding-top: 10px !important;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+iframe {
+    padding-top: 5px;
+}
+
+.container-content-1 {
+    text-align: justify;
+    padding-top: 50px;
+    color: #fff;
+    padding-bottom: 50px;
+}
+
+.content {
+    padding-left: 20px;
+    padding-right: 30px;
+    text-justify: auto;
+}
+
+.content p {
+    font-size: 16px;
+}
+
+.title {
+    text-align: center;
+}
+
+.material-icons {
+    padding-top: 20px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    font-size: 6rem !important;
+}
+
+.container-content-2 {
+    padding-top: 50px;
+    color: #fff;
+    padding-bottom: 50px;
+}

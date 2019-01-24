@@ -1,0 +1,34 @@
+.TeamLogo {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.teams-flex {
+    display: flex !important;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 100px;
+    flex-wrap: wrap;
+}
+
+.team-item {
+    flex: 1 !important;
+}
+
+.image-overlay {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+}

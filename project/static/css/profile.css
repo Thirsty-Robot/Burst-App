@@ -1,0 +1,45 @@
+.content {
+    padding-top: 120px;
+    padding-right: 100px;
+}
+
+.user {
+    position: absolute;
+    padding-left: 100px;
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.username {
+    padding-top: 20px;
+}
+
+.role {
+    width: 40px;
+    height: 40px;
+}
+
+.teams{
+    padding-left: 400px !important;
+    position: absolute;
+}
+
+.teams-flex {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.team-item {
+    flex: 1 !important;
+    padding-top: 5px;
+}
+
+.TeamLogo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}

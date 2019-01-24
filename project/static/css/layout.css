@@ -1,0 +1,21 @@
+body {
+    
+    background: rgba(69,90,100,1);
+    background: -moz-linear-gradient(top, rgba(69,90,100,1) 0%, rgba(55,71,79,1) 60%, rgba(44,57,63,1) 87%, rgba(38,50,56,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(69,90,100,1)), color-stop(60%, rgba(55,71,79,1)), color-stop(87%, rgba(44,57,63,1)), color-stop(100%, rgba(38,50,56,1)));
+    background: -webkit-linear-gradient(top, rgba(69,90,100,1) 0%, rgba(55,71,79,1) 60%, rgba(44,57,63,1) 87%, rgba(38,50,56,1) 100%);
+    background: -o-linear-gradient(top, rgba(69,90,100,1) 0%, rgba(55,71,79,1) 60%, rgba(44,57,63,1) 87%, rgba(38,50,56,1) 100%);
+    background: -ms-linear-gradient(top, rgba(69,90,100,1) 0%, rgba(55,71,79,1) 60%, rgba(44,57,63,1) 87%, rgba(38,50,56,1) 100%);
+    background: linear-gradient(to bottom, rgba(69,90,100,1) 0%, rgba(55,71,79,1) 60%, rgba(44,57,63,1) 87%, rgba(38,50,56,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#455a64', endColorstr='#263238', GradientType=0 );
+}
+
+.navbar-brand {
+    font-size: 21px !important;
+    padding-left: 10px;
+    padding-top: 10px !important;
+}
+
+.nav-link {
+    font-size: 15px !important;
+}

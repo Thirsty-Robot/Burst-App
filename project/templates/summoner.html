@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Burst | {{ summoner.Name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/summoner.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <img class="icon-image" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/{{ summoner.Icon }}.png">
+                <h3 class="col-sm">{{ summoner.Name }}</h3>
+                <h5 class="col-sm">{{ summoner.Level }}</h5>
+                <h5 class="col-sm">{{ summoner.Tier }}</h5>
+                {% if summoner.Tier == 'BRONZE' %}
+                    <img class="col-sm league-image" src="{{ url_for('static', filename='../static/images/divisions/BRONZE.png') }}">
+                {% elif summoner.Tier == 'SILVER' %}
+                    <img class="col-sm league-image" src="{{ url_for('static', filename='../static/images/divisions/Silver.png') }}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'layout-user.html' %}
+{% block title %}
+    <title>Teams | Burst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/teams.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="teams-flex">
+    {% for team in teams %}
+        <div class="team-item animated fadeInLeft">
+            <a class="TeamName" href="/team/{{team.TeamId}}"> 
+                <img class="TeamLogo" src="{{ url_for('static', filename='../static/images/logos/'+team.TeamLogo) }}">
+                <div class="image-overlay">
+                    {{ team.TeamName }}
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

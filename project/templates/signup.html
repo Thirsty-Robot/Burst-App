@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Sign-up | Burst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/signup.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="content animated fadeIn mx-auto">
+        <div class="back-form mx-auto">
+            <form class="form mx-auto" action="/signup" method="POST">
+
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger flashes" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="summoner">Summoner name</label>
+                        <input type="text" class="form-control" id="summoner" placeholder="Enter summoner name" name="summoner">
+                    </div>
+
+                    <div class="col">
+                        <label for="summoner">Summoner region</label>
+                        <select name="region" class="form-control">
+                            <option value="" selected>Choose region</option>
+                            <option value="na1">NA</option>
+                            <option value="la1">LAN</option>
+                            <option value="la2">LAS</option>
+                            <option value="br1">BR</option>
+                            <option value="eun1">EUNE</option>
+                            <option value="euw1">EUW</option>
+                            <option value="oc1">OCE</option>
+                            <option value="ru">RU</option>
+                            <option value="jp1">JP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="pass_2">Confirm password</label>
+                    <input type="password" class="form-control" id="password_confirm" placeholder="Confirm password" name="password_confirm">
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Do you agree with our <a href="/terms-and-conditions">Terms & Conditions</a>?</label>
+                </div>
+
+                <button class="btn btn-primary btn-large" type="submit">Sign-up</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

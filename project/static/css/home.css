@@ -1,0 +1,112 @@
+.page-content {
+    padding-top: 120px;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    float: left;
+    position: absolute;
+}
+
+.post-blog {
+    padding-left: 100px;
+    padding-bottom: 40px;
+}
+
+.image-post {
+    width: 600px !important;
+    height: 400px !important;
+}
+
+.image-blog {
+    padding-bottom: 2px !important;
+}
+
+.post-content {
+    padding-left: 90px;
+}
+
+.post-background {
+    background-color: #455a64;
+    border-radius: 2px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    width: 600px;
+}
+
+.post-writing {
+    padding-left: 6px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.post-username {
+    padding-left: 6px;
+    padding-bottom: 9px;
+    text-decoration: none;
+    color: #78909c;
+}
+
+.controls {
+    list-style-type: none;
+    padding-top: 5px;
+    margin: 0;
+    padding-left: 5px;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+.element {
+    float: left;
+}
+
+.post-textbox {
+    padding-bottom: 10px;
+    padding-left: 190px;
+}
+
+.textarea-control {
+    background-color: #455a64;
+    width: 600px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.post {
+    background: #37474f;
+    border: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    text-align: justify;
+    color: #fff;
+    outline: none;
+}
+
+.element i {
+    display: block;
+    font-size: 2rem !important;
+    color: #78909c;
+}
+
+.liked:hover {
+    color: #78909c;
+}
+
+.share:hover {
+    color: #78909c;
+}
+
+.line-separator{
+    height:1px;
+    background:#78909c;
+    border-bottom:1px solid #78909c;
+}
+    

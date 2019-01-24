@@ -1,0 +1,31 @@
+{% extends 'layout-user.html' %}
+{% block title %}
+    <title>Profile | Burst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/profile.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+        <div class="teams">
+            <h3>Teams</h3>
+            <div class="teams-flex">
+                {% for team in teams %}
+                    <div class="team-item animated fadeInLeft">
+                        <a class="TeamName" href="/team/{{team.TeamId}}"> 
+                            <img class="TeamLogo" src="{{ url_for('static', filename='../static/images/logos/'+team.TeamLogo) }}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="user">
+            <img class="icon" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/{{ account.Icon }}.png">
+            <h3 class="username">{{ account.Username }}</h3>
+            {% for role in account.Roles %}
+                <img class="role" src="{{ url_for('static', filename='../static/images/roles/{{ role }}.png') }}">
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

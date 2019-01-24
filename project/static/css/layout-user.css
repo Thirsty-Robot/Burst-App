@@ -1,0 +1,32 @@
+body {
+    background-color: #37474f !important;
+    color: #fff !important;
+}
+
+.navbar-brand {
+    font-size: 21px !important;
+    padding-left: 10px;
+    padding-top: 10px !important;
+}
+
+.nav-link {
+    font-size: 15px !important;
+}
+
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #006064;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.my-float {
+    margin-top: 22px;
+    text-decoration: none;
+    color: #fff;
+}

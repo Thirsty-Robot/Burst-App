@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Burst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/index.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="content-1 mx-auto">
+        <center>
+            <img src="{{ url_for('static', filename='../static/images/Logo.png') }}" class="logo animated fadeIn">
+
+            <form @submit="Validate()" method="POST" action="/" class="form-inline justify-content-md-center form animated fadeIn" id="form-search">
+                <div class="form-group mb-12 forms">
+                    <input class="form-control summoner-name" v-model="summoner_name" v-bind:class="{ animated: add_animate, jello: animate }" name="summoner-name" id="SummonerName" type="text" required placeholder="Search summoner" id="summoner_name" >
+                </div>
+
+                <div class="form-group mb-12 forms">
+                    <select class="form-control region" v-model="region" v-bind:class="{ animated: add_animate, jello: animate }" id="Region" name="region" required>
+                        <option value="" selected>Choose region</option>
+                        <option value="na1">NA</option>
+                        <option value="la1">LAN</option>
+                        <option value="la2">LAS</option>
+                        <option value="br1">BR</option>
+                        <option value="eun1">EUNE</option>
+                        <option value="euw1">EUW</option>
+                        <option value="oc1">OCE</option>
+                        <option value="ru">RU</option>
+                        <option value="jp1">JP</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary btn-large" type="submit" v-on:click="Validate()">Search</button>
+            </form>
+            
+            <div class="alert alert-danger flashes" role="alert" id="errorAlert" style="display: none;"></div>
+        </center>
+    </div>
+
+    <div class="container-content-1">
+        <div class="content">
+            <h2>What is Goo-League?</h2>
+            <div class="row">
+                <div class="col">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mt7ntvTpi_M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+
+                <div class="col">
+                    <p>Burst is a a tool to help you get better at League of Legends. It offers a TO:DO system, in which 
+                        you can choose at what you wan't to get better. From farming to surviving, we are gonna keep up with every
+                        task and help you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-content-2">
+        <div class="content">
+            <h2>Burst Advantages</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <i class="large material-icons icon">group</i>
+                        <h5 class="title">For Teams</h5>
+                        <p>We offer the TODO:Team system in which you can add, remove and edit tasks so that your team-mates can get better at certain areas.</p>
+                    </div>
+
+                    <div class="col">
+                        <i class="large material-icons icon">flash_on</i>
+                        <h5 class="title">For Try-Harders</h5>
+                        <p>Goo-League offers a simple, and fast-to-learn user interface, so that everyone can use it quickly and simply. Burst will catch with you in no time.</p>
+                    </div>
+
+                    <div class="col">
+                        <i class="large material-icons icon">person</i>
+                        <h5 class="title">For Casual Players</h5>
+                        <p>Our main goal is to keep everything free so that even a casual LoL players can get better at the game.</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="{{ url_for('static', filename='../static/js/index.js') }}"></script>
+{% endblock %}

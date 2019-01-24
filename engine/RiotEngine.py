@@ -1,13 +1,13 @@
 """
-Coded by : Thirsty-Robot
-Email : Thirsty-Robot@protonmail.com
-Code finished in : TODO
-Github Repository :     
+Coded by: Thirsty-Robot (Axel C. Uribe);
+Email: Thirsty-Robot@protonmail.com;
+License : MIT;
 """
 
 from riotwatcher import RiotWatcher
 from requests import HTTPError
 import os
+import json
 
 # Api enviroment variable
 api_key = 'RGAPI-e42b0ebf-fa4a-466d-8b9d-ed62fa7084fc'
@@ -17,7 +17,6 @@ watcher = RiotWatcher(api_key)
 
 # Search summoner class
 class Engine():
-    # Class constructor
     def __init__(self):
         self.free_champ_dict = []
 
@@ -75,3 +74,18 @@ class Engine():
         except HTTPError as err:
             if err.response.status_code == 404:
                 return False
+
+    def simple_search(self, name, region):
+        try:
+            summoner = watcher.summoner.by_name(region, name)
+
+            response = {
+                'icon' : summoner['profileIconId'],
+                'name' : summoner['name']
+            }
+
+            return response
+        
+        except HTTPError as err:
+            if err.response.status_code == 404:
+                return 0

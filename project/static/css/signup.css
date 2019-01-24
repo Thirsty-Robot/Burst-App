@@ -1,0 +1,25 @@
+.content {
+    padding-top: 115px;
+    width: 600px;
+    padding-bottom: 50px;
+}
+
+.row {
+    padding-bottom: 10px !important;
+}
+
+.custom-control {
+    padding-bottom: 10px;
+}
+
+.back-form {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+label {
+    color: #fff;
+}

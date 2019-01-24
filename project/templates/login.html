@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Sign-up | Burst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="content animated fadeIn mx-auto">
+        <div class="back-form mx-auto">
+            <form class="form mx-auto" action="/login" method="POST">
+
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger flashes" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                </div>
+
+                <p style="color: #fff;">Don't have an account? <a href="/signup">Sign up</a></p>
+
+                <button class="btn btn-primary btn-large" type="submit">Sign-up</button>
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}

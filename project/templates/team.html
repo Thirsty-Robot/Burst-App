@@ -1,0 +1,21 @@
+{% extends 'layout-user.html' %}
+{% block title %}
+    <title>{{team_name}} | Burst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/profile.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h3>{{ team_name }}</h3>
+        <p>Available roles: </p>
+        <form method="POST" action="/team/{{team_id}}">
+            <select name="position" class="form-control" required>
+                <option value="" selected>Available Positions</option>
+                {% for role in available_positions %}
+                    <option value="{{role}}">{{role}}</option>
+                {% endfor %}
+            </select>
+            
+        </form>
+    </div>
+{% endblock %}
