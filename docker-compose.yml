@@ -1,9 +1,0 @@
-burst:
-  build: .
-  command: "python server.py"
-  ports:
-    - "8080"
-    - "8000"
-    - "5000"
-  volumes:
-    - .:/Burst
